@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from .models import SliderModel, AboutModel, ServicesModelCategory, ServicesModelEmployes, ProjectModels
 
-# Create your views here.
+
+
+def indexView(requests):
+    sliderData = SliderModel.objects.all()
+    context = {
+        "sliderData": sliderData
+    }
+    return render(requests, 'strategy/index.html', context)
