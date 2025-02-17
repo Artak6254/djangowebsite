@@ -6,7 +6,13 @@ from .models import SliderModel, AboutModel, ServicesModelCategory, ServicesMode
 
 def indexView(requests):
     sliderData = SliderModel.objects.all()
+    about = AboutModel.objects.all()
+    services = ServicesModelCategory.objects.all()
+    services_employee = ServicesModelEmployes.objects.all()
     context = {
-        "sliderData": sliderData
+        "sliderData": sliderData,
+        "about": about,
+        "services_category": services,
+        "services_employee": services_employee
     }
-    return render(requests, 'strategy/index.html', context)
+    return render(requests, 'index.html', context)
