@@ -3,4 +3,8 @@ from .models import SliderModel, AboutModel, ServicesModelCategory, ServicesMode
 
 
 # Register your models here.
+admin.site.register(SliderModel)
 admin.site.register(AboutModel)
+admin.site.register(ServicesModelCategory)
+admin.site.register(ServicesModelEmployes)
+admin.site.register(ProjectModels)

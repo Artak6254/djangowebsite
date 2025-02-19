@@ -9,10 +9,12 @@ def indexView(requests):
     about = AboutModel.objects.all()
     services = ServicesModelCategory.objects.all()
     services_employee = ServicesModelEmployes.objects.all()
+    project = ProjectModels.objects.all()
     context = {
         "sliderData": sliderData,
         "about": about,
         "services_category": services,
-        "services_employee": services_employee
+        "services_employee": services_employee,
+        "project": project
     }
     return render(requests, 'index.html', context)
