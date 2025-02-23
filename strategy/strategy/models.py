@@ -56,4 +56,12 @@ class ProjectModels(models.Model):
     def __str__(self):
         return f"{self.project_image} {self.project_title} {self.project_heading}"  
     
+
+class ContactForm(models.Model):
+     username = models.CharField(max_length=50)    
+     user_email = models.EmailField(max_length=70)
+     user_message = models.TextField()
+     
+     def __str__(self):
+         return f"{self.username} {self.user_email} {self.user_message}"
                         
