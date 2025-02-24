@@ -420,23 +420,24 @@ Free Bootstrap 5 HTML Template
                         <div class="row">
 
                             <div class="col-lg-6 col-12">
-                                <form action="" class="custom-form contact-form" action="" method="post" role="form">
+                                <form action="{% url "contact" %}" class="custom-form contact-form" action="" method="post" role="form">
+                                {% csrf_token %}
                                     <small class="small-title">Contact <strong class="text-white">05/05</strong></small>
 
                                     <h2 class="mb-5">Say Hi to us</h2>
 
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6 col-12">                                    
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required="">
+                                            <input type="text" name="username" id="name" class="form-control" placeholder="Your Name" required="">
                                         </div>
 
                                         <div class="col-lg-6 col-md-6 col-12">         
-                                            <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="your@company.com" required="">
+                                            <input type="email" name="user_email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="your@company.com" required="">
                                         </div>
 
                                         <div class="col-12">
-                                            <textarea class="form-control" rows="7" id="message" name="message" placeholder="Message"></textarea>
-
+                                            <textarea class="form-control" rows="7" id="message" name="user_message" placeholder="Message"></textarea>
+                                            {{form.as_p}}
                                             <button type="submit" class="form-control">Submit</button>
                                         </div>
 
